@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio DAPOYY </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#0f172a',
+                        accent: '#f97316'
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif']
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' }
+                        }
+                    },
+                    animation: {
+                        float: 'float 3s ease-in-out infinite'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+        }
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #2563eb, #f97316);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+        .skill-card:hover::before {
+            transform: scaleX(1);
+        }
+        .project-card:hover .project-icon {
+            transform: translateY(-5px) rotate(10deg);
+            transition: all 0.3s ease;
+        }
+        .project-icon {
+            transition: all 0.3s ease;
+        }
+        .glow-effect {
+            box-shadow: 0 0 15px rgba(37, 99, 235, 0.3);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <!-- Header -->
+    <header class="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold text-primary">Industrio<span class="text-accent">.</span></a>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-primary font-medium transition">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-primary font-medium transition">Tentang</a>
+                <a href="#skills" class="text-gray-700 hover:text-primary font-medium transition">Kemampuan</a>
+                <a href="#projects" class="text-gray-700 hover:text-primary font-medium transition">Proyek</a>
+                <a href="#contact" class="text-gray-700 hover:text-primary font-medium transition">Kontak</a>
+                <a href="#motivation" class="text-gray-700 hover:text-primary font-medium transition">Motivasi</a>
+
+            </nav>
+            
+            <button class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white min-h-screen flex items-center">
+        <div class="container mx-auto px-4 py-20 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0" data-aos="fade-right" data-aos-duration="1000">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                   FULLSTACK DEVELOPER <br>
+                    <span class="text-accent">Masa Depan</span>
+                </h1>
+                <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-lg">
+                    Mengoptimalkan sistem aplikasi, meningkatkan efisiensi pengembangan, dan mendorong inovasi melalui solusi web dan teknologi digital.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="bg-white text-primary hover:bg-blue-50 px-8 py-3 rounded-full font-semibold transition-all transform hover:scale-105 shadow-lg">
+                        Hubungi Saya
+                    </a>
+                    <a href="#projects" class="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-3 rounded-full font-semibold transition">
+                        Lihat Proyek
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center" data-aos="fade-left" data-aos-duration="1000">
+                <div class="relative">
+                    <div class="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-primary to-accent rounded-full overflow-hidden glow-effect">
+                        <img src="1.jpeg" 
+                             alt="Profile" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -top-4 -right-4 w-24 h-24 bg-white/10 rounded-full flex items-center justify-center animation-float">
+                        <i class="fas fa-industry text-3xl text-accent"></i>
+                    </div>
+                    <div class="absolute -bottom-4 -left-4 w-20 h-20 bg-white/10 rounded-full flex items-center justify-center">
+                        <i class="fas fa-cogs text-2xl text-primary"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Tentang Saya</h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2" data-aos="fade-right" data-aos-duration="800">
+                    <div class="bg-gray-100 rounded-2xl p-6 shadow-sm">
+                        <img src="5.jpeg" 
+                             alt="About" class="w-full rounded-xl object-cover aspect-video">
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2" data-aos="fade-left" data-aos-duration="800">
+                    <h3 class="text-2xl font-bold mb-4">Dafi Alfarezel Rachman</h3>
+                    <p class="text-gray-600 mb-6">
+                        Sebagai siswa jurusan RPL di SMK TELKOM MALANG saya membuat website statis seperti membuat website rekomendasi makanan sehat dan lain lainnya.
+                    </p>
+                    <p class="text-gray-600 mb-8">
+                       Sebagai Full Stack Developer, saya membangun dan mengelola website dari frontend hingga backend untuk menghasilkan aplikasi yang fungsional dan mudah digunakan.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-3">
+                                <i class="fas fa-graduation-cap text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Jurusan RPL</p>
+                                <p class="text-gray-600 text-sm">SMK TELKOM MALANG</p>
+                            </div>
+                        </div>
+                        <div class="flex items center">
+                            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-3">
+                                <i class="fas fa-briefcase text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">1+ Tahun Pengalaman</p>
+                                <p class="text-gray-600 text-sm">FullStack Developer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Skills Section -->
+<section id="skills" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Keahlian Full Stack Developer</h2>
+      <div class="w-24 h-1 bg-primary mx-auto rounded"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Skill 1 -->
+      <div class="bg-white rounded-xl p-6 shadow-sm skill-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+          <i class="fab fa-html5 text-primary text-xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-2">HTML, CSS & Tailwind</h3>
+        <p class="text-gray-600">
+          Membangun tampilan website yang responsif, modern, dan ramah pengguna menggunakan HTML, CSS, dan Tailwind.
+        </p>
+      </div>
+
+      <!-- Skill 2 -->
+      <div class="bg-white rounded-xl p-6 shadow-sm skill-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+          <i class="fab fa-js text-primary text-xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-2">JavaScript</h3>
+        <p class="text-gray-600">
+          Mengembangkan interaksi dinamis, validasi form, dan fitur frontend menggunakan JavaScript.
+        </p>
+      </div>
+
+      <!-- Skill 3 -->
+      <div class="bg-white rounded-xl p-6 shadow-sm skill-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+          <i class="fab fa-react text-primary text-xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-2">React & Frontend Framework</h3>
+        <p class="text-gray-600">
+          Membangun aplikasi web modern menggunakan React dan framework frontend lainnya.
+        </p>
+      </div>
+
+      <!-- Skill 4 -->
+      <div class="bg-white rounded-xl p-6 shadow-sm skill-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+          <i class="fas fa-server text-primary text-xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Backend Development</h3>
+        <p class="text-gray-600">
+          Mengembangkan API dan logika server menggunakan Node.js, PHP, atau framework backend lainnya.
+        </p>
+      </div>
+
+      <!-- Skill 5 -->
+      <div class="bg-white rounded-xl p-6 shadow-sm skill-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+          <i class="fas fa-database text-primary text-xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Database</h3>
+        <p class="text-gray-600">
+          Mengelola database MySQL, PostgreSQL, atau MongoDB untuk penyimpanan data aplikasi.
+        </p>
+      </div>
+
+      <!-- Skill 6 -->
+      <div class="bg-white rounded-xl p-6 shadow-sm skill-card" data-aos="fade-up" data-aos-delay="600">
+        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+          <i class="fas fa-cloud-upload-alt text-primary text-xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Deployment & DevOps</h3>
+        <p class="text-gray-600">
+          Melakukan deployment aplikasi ke server, cloud hosting, dan mengelola version control dengan Git.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Proyek Unggulan</h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+               <!-- Project Card 1 -->
+<div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm project-card" data-aos="zoom-in-up" data-aos-delay="100">
+    <div class="h-48 overflow-hidden">
+        <img src="2.jpeg" 
+             alt="Project" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+    </div>
+    <div class="p-6">
+        <div class="flex justify-between items-start mb-3">
+            <h3 class="text-xl font-bold"> Membuat website makanan sehat</h3>
+            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center project-icon">
+                <i class="fas fa-map-marked-alt text-primary"></i>
+            </div>
+        </div>
+        <p class="text-gray-600 mb-4">
+            Saya membuat sederhana yang berisi tentang rekomendasi makanan sehat
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded">Website</span>
+            <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded">html</span>
+        </div>
+
+        <!-- Link Klik di Sini -->
+        <a href="https://menu-finder-f3oc.vercel.app/" 
+           class="inline-block text-primary font-semibold hover:underline">
+            Klik di sini
+        </a>
+    </div>
+</div>
+
+                <!-- Project Card 2 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm project-card" data-aos="zoom-in-up" data-aos-delay="200">
+                    <div class="h-48 overflow-hidden">
+                        <img src="3.jpeg" 
+                             alt="Project" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Membuat roket di tincard</h3>
+                            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center project-icon">
+                                <i class="fas fa-boxes text-primary"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                           Saya membuat desain 3D roket sederhana di tincard
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded">3D</span>
+                            <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded">Desain</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project Card 3 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm project-card" data-aos="zoom-in-up" data-aos-delay="300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="4.jpeg" 
+                             alt="Project" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Fotografi</h3>
+                            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center project-icon">
+                                <i class="fas fa-robot text-primary"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Saya belajar teknik teknik cara menjadi photographer
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded">Fotografi</span>
+                            <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded">Foto</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+<section id="contact" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Fullstack Developer Collaboration</h2>
+            <div class="w-24 h-1 bg-primary mx-auto rounded"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto mt-6">
+                Siap membangun aplikasi web yang modern, cepat, dan scalable?  
+                Hubungi saya untuk berdiskusi mengenai pengembangan frontend, backend, API, hingga deployment sesuai kebutuhan proyek Anda.
+            </p>
+        </div>
+
+
+            <div class="max-w-5xl mx-auto bg-white/80 backdrop-blur rounded-3xl shadow-lg overflow-hidden border border-gray-100">
+  
+  <!-- Header -->
+  <div class="p-8 bg-gradient-to-r from-primary to-accent text-white">
+    <h2 class="text-3xl font-bold mb-1">Get in Touch</h2>
+    <p class="opacity-90">Hubungi saya dengan cara paling mudah</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-8 p-8">
+
+    <!-- Card Kontak -->
+    <div class="space-y-6" data-aos="fade-right" data-aos-duration="1000">
+      <div class="group flex items-center gap-4 p-4 rounded-2xl hover:bg-gray-50 transition" data-aos="fade-up" data-aos-delay="100">
+        <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:scale-110 transition">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <div>
+          <p class="font-semibold">Email</p>
+          <p class="text-gray-600">dafialfarezelrachman@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="group flex items-center gap-4 p-4 rounded-2xl hover:bg-gray-50 transition" data-aos="fade-up" data-aos-delay="200">
+        <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:scale-110 transition">
+          <i class="fas fa-phone-alt"></i>
+        </div>
+        <div>
+          <p class="font-semibold">Telepon</p>
+          <p class="text-gray-600">+62 877 8329 4545</p>
+        </div>
+      </div>
+
+      <div class="group flex items-center gap-4 p-4 rounded-2xl hover:bg-gray-50 transition" data-aos="fade-up" data-aos-delay="300">
+        <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:scale-110 transition">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div>
+          <p class="font-semibold">Lokasi</p>
+          <p class="text-gray-600">Malang, Indonesia</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- WhatsApp Card -->
+    <div class="relative flex items-center justify-center" data-aos="fade-left" data-aos-duration="1000">
+      <div class="absolute -inset-1 bg-gradient-to-r from-primary to-accent blur opacity-30 animate-pulse"></div>
+      <a
+        href="https://wa.me/6287783294545?text=Halo%20saya%20ingin%20menghubungi%20Anda"
+        target="_blank"
+        class="relative z-10 w-full text-center bg-primary text-white font-bold py-5 rounded-2xl shadow-lg transition transform hover:scale-105 hover:shadow-xl"
+      >
+        Chat via WhatsApp
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- Motivation Video Section -->
+<section id="motivation" class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Motivasi Saya</h2>
+      <div class="w-24 h-1 bg-primary mx-auto rounded"></div>
+      <p class="text-gray-600 mt-4">
+        Motivasi saya selama ini dalam perjalanan menjadi Fullstack Developer.
+      </p>
+    </div>
+
+    <div class="flex justify-center" data-aos="zoom-in">
+      <div class="w-full max-w-3xl bg-gray-100 rounded-2xl p-4 shadow-md">
+        <video controls class="w-full rounded-xl">
+          <source src="motivasi.mp4" type="video/mp4">
+          Browser kamu tidak mendukung video.
+        </video>
+        <p class="text-center mt-4 font-semibold text-gray-700">
+          Motivasi Saya Selama Ini dalam Fullstack
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+         
+            
+
+    
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        
+
+        
+    </script>
+</body>
+</html>
